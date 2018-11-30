@@ -37,7 +37,7 @@ ptr_zone_cidr: "172.31.0.0/16"
 ec2_keypair: "ansible"
 ec2_region: "ap-southeast-2"
 ec2_vpc_id: "vpc-29e36e4e"
-ec2_key_file: "~/.ssh/ansible.pem"
+ec2_key_file: "roles/windows-workstation/files/ansible.pem"
 ec2_vpc_subnet_id: subnet-c3295a8a
 
 # Instance Sizes
