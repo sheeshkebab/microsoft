@@ -7,16 +7,16 @@
   vars:
     teardown: false
   tasks:
-  #- include_role:
-  #    name: "check_setup"
+#  - include_role:
+#      name: "check_setup"
   - include_role:
       name: "manage-{{ instance_loc }}-instances"
 
 - name: Configure Active Directory Domain Controller
   hosts: tag_windows_domain_controller
   gather_facts: yes
-  vars_files:
-    - [ 'vars/custom.yml', 'vars/main.yml' ]
+#  vars_files:
+#    - [ 'vars/custom.yml', 'vars/main.yml' ]
   tags:
     - windows_ad_controller
   roles:
@@ -25,8 +25,8 @@
 - name: Configure Windows Servers
   hosts: windows
   gather_facts: True
-  vars_files:
-    - [ 'vars/custom.yml', 'vars/main.yml' ]
+#  vars_files:
+#    - [ 'vars/custom.yml', 'vars/main.yml' ]
   tags:
     - windows_hosts
   roles:
@@ -35,8 +35,8 @@
 - name: Configure Windows Workstation
   hosts: windows_workstations
   gather_facts: True
-  vars_files:
-    - [ 'vars/custom.yml', 'vars/main.yml' ]
+#  vars_files:
+#    - [ 'vars/custom.yml', 'vars/main.yml' ]
   tags:
     - windows_workstation
   roles:
