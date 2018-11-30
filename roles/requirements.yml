@@ -1,27 +1,26 @@
-- src: git@gitlab.etgredhat.com.au:ansible/windows-common.git 
+- src: https://gitlab.etgredhat.com.au/ansible/windows-common.git
   name: windows-common 
   scm: git
   version: master 
 
-
-- src: git@gitlab.etgredhat.com.au:ansible/windows-workstation.git 
+- src: https://gitlab.etgredhat.com.au/ansible/windows-workstation.git
   name: windows-workstation
   scm: git
   version: master
 
 
-- src: git@gitlab.etgredhat.com.au:ansible/manage-ec2-instances.git 
+- src: https://gitlab.etgredhat.com.au/ansible/manage-ec2-instances.git
   name: manage-ec2-instances 
   scm: git
   version: master
 
 
-- src: git@gitlab.etgredhat.com.au:ansible/windows-ad-controller.git 
+- src: https://gitlab.etgredhat.com.au/ansible/windows-ad-controller.git
   name: windows-ad-controller 
   scm: git
   version: master
 
-- src: git@gitlab.etgredhat.com.au:ansible/manage-vmware-instances.git 
+- src: https://gitlab.etgredhat.com.au/ansible/manage-vmware-instances.git
   name: manage-vmware-instances 
   scm: git
   version: master
