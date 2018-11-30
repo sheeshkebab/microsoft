@@ -38,6 +38,8 @@ ec2_keypair: "etg-richard"
 ec2_region: "ap-southeast-2"
 ec2_vpc_id: "vpc-29e36e4e"
 ec2_key_file: "~/.ssh/etg-richard.pem"
+ec2_vpc_subnet_id: subnet-c3295a8a
+
 # Instance Sizes
 ec2_windc_instance_type: "t2.medium"    # t2.micro fails
 ec2_windows_workstation_instance_type: "t2.medium"   # t2.small was slowwwwww...
