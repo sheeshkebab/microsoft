@@ -1,0 +1,105 @@
+---
+##########################################################
+##################### GENERAL INFO #######################
+##########################################################
+
+# Where to provision instances (ec2, azure, vmware)
+instance_loc: ec2
+name_prefix: "windowsdemo"
+tower_user_name: richard 
+
+# Needed for AD and windows client provision
+dns_domain_name: "redhat.com.au"
+dns_domain_name_short: "redhat"
+domain_admin_password: "MyP@ssw0rd21"
+
+# Number of users and prefix for user name
+user_count: 1
+# move to tower variables
+user_prefix: ansible
+users_password: "Ans1bl3--"
+
+# Tower LDAP Integration
+ldap_search_base: "DC=redhat,DC=com,DC=au"
+ldap_access_filter: "(&(objectClass=user)(memberOf=CN=Ansible Admins,CN=Users,DC=redhat,DC=com,DC=au))"
+tower_ldap_search_dn: "CN=Users,DC=redhat,DC=com.au"
+
+# Needed for reverse lookup DNS setup
+ptr_zone_name: "0.31.172.in-addr.arpa"
+ptr_zone_cidr: "172.31.0.0/16"
+
+##########################################################
+######################## EC2 INFO ########################
+##########################################################
+
+# move to tower variables
+
+ec2_keypair: "etg-richard"
+ec2_region: "ap-southeast-2"
+ec2_vpc_id: "vpc-29e36e4e"
+ec2_key_file: "~/.ssh/etg-richard.pem"
+# Instance Sizes
+ec2_windc_instance_type: "t2.medium"    # t2.micro fails
+ec2_windows_workstation_instance_type: "t2.medium"   # t2.small was slowwwwww...
+ec2_windows_instance_type: "t2.small"   # Small = 1 vCPU / 2GB
+# Ideally update to auto-pull the latest
+ec2_rhel_ami: ami-0cc760f1174030ca8      # Rhel 7.6   i
+ec2_windows_ami: ami-03b3182648d0d0bfb   # Windows 2016 Base
+
+##########################################################
+###################### VMWARE INFO #######################
+##########################################################
+
+# move to tower job template
+
+vCenterServer: 10.0.1.2
+vCenterUsername: administrator
+vCenterPassword: MyP@ssw0rd21
+vCenterDatacenter: Datacenter
+vCenterCluster: Cluster
+vCenterFolder: /Workshops
+vCenterCloneSourceWindows: Win2016Template
+VCenterCloneSnapshotWindows: LinkedSS
+vCenterCloneSourceLinux: CentosBase
+VCenterCloneSnapshotLinux: LinkedSS
+VCenterLinkedClone: true
+vCenterPortGroup: Workshops
+vCenterPortGroupExt: External
+
+
+##########################################################
+####################### AZURE INFO #######################
+##########################################################
+
+# move to tower job template
+
+azure_admin_user: "etgredhat"
+azure_admin_pass: "MyS3cr3tP@ssw0rd"
+
+azure_client_id: ''
+azure_secret: ''
+azure_subscription_id: ''
+azure_tenant: ''
+azure_location: ''
+
+azure_resource_group: skylight_rg
+azure_storage_account: skylightstorage
+azure_storage_account_type: Standard_LRS
+azure_virtual_network: skylightnetwork
+azure_virtual_subnet: skylightsubnet
+
+# Instance Sizes
+azure_windc_instance_type: "Standard_A2_v2"    # t2.micro fails
+azure_windows_workstation_instance_type: "Standard_A2_v2"   # t2.small was slowwwwww...
+azure_windows_instance_type: "Standard_A1_v2"   # Small = 1 vCPU / 2GB
+
+# Ideally update to auto-pull the latest
+azure_rhel_publisher: "RedHat"
+azure_rhel_offer: "RHEL"
+azure_rhel_sku: "7.3"
+azure_rhel_version: "7.3.2017090723"
+
+azure_win_publisher: "MicrosoftWindowsServer"
+azure_win_offer: "WindowsServer"
+azure_win_sku: "2016-Datacenter"
+azure_win_version: "2016.127.20171217"
