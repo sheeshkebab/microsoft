@@ -42,3 +42,12 @@
   roles:
     - windows-common
     - windows-workstation
+
+- name: all hosts ip details
+  hosts: all
+  gather_facts: True
+  tasks:
+  
+  - name: Print
+    debug:
+      var: hostvars[inventory_hostname].public_ip
