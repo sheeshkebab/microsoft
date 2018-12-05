@@ -44,7 +44,7 @@
     - windows-workstation
 
 - name: all hosts ip details
-  hosts: all
+  hosts: windows_workstations:windows:windows_domain_controllers 
   gather_facts: True
   tasks:
   
