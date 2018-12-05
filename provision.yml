@@ -50,4 +50,4 @@
   
   - name: Print public ip 
     debug:
-      var: "{{hostvars[inventory_hostname].public_ip}} {{ inventory_hostname }}"
+      msg: "{{hostvars[inventory_hostname].public_ip}} {{ inventory_hostname }}"
