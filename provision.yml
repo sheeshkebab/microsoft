@@ -48,6 +48,6 @@
   gather_facts: True
   tasks:
   
-  - name: Print
+  - name: Print public ip 
     debug:
-      var: hostvars[inventory_hostname].public_ip
+      var: "{{hostvars[inventory_hostname].public_ip}} {{ inventory_hostname }}"
